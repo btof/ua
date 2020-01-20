@@ -1,0 +1,43 @@
+{
+  "name": "mutation-http",
+  "version": "1.0.0",
+  "description": "graphql mutations to http ua",
+  "main": "src/main.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "node dist/main.js",
+    "generate": "graphql-codegen",
+    "prebuild": "npm run clean && npm run generate",
+    "build": "tsc && npm run prettier:all",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prettier": "prettier --write",
+    "prettier:all": "prettier --write \"src/**/*.ts\""
+  },
+  "author": "BTOF",
+  "license": "ISC",
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.11.2",
+    "@graphql-codegen/typescript": "^1.11.2",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "2.16.0",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-typescript": "^6.3.1",
+    "eslint-config-prettier": "6.9.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "prettier": "1.19.1",
+    "typescript": "3.7.4"
+  },
+  "dependencies": {
+    "apollo-server": "2.9.16",
+    "graphql": "14.5.8",
+    "lodash": "^4.17.15",
+    "module-alias": "^2.2.2",
+    "node-fetch": "^2.6.0",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.4.1"
+  },
+  "_moduleAliases": {
+    "src": "dist"
+  }
+}

@@ -9,7 +9,7 @@
     "emitDecoratorMetadata": true,
     "baseUrl": ".",
     "paths": {
-      "@src/*": ["./src/*"]
+      "src/*": ["./src/*"]
     },
     "lib": ["es2017", "dom", "esnext.asynciterable"]
   },

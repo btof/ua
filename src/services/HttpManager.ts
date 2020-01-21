@@ -1,6 +1,6 @@
 import AbstractLogger from 'src/core/logger/AbstractLogger';
-import HttpConnector from 'src/data/connector/HttpConnector';
 import { ActionRequest, ActionResponse } from 'src/interfaces/types.d';
+import HttpConnector from 'src/data/connector/HttpConnector';
 
 export default class HttpManager {
   constructor(private logger: AbstractLogger, private connector: HttpConnector) {}

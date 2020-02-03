@@ -1,6 +1,6 @@
-import * as fs from 'fs';
-import * as winston from 'winston';
-import * as DailyRotate from 'winston-daily-rotate-file';
+import fs from 'fs';
+import winston from 'winston';
+import DailyRotate from 'winston-daily-rotate-file';
 import AbstractSetting from 'src/core/config/AbstractSetting';
 import AbstractLogger from 'src/core/logger/AbstractLogger';
 

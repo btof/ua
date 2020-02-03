@@ -9,15 +9,21 @@ export default class HttpConnector {
   }
 
   public async performHttpRequest(request: ActionRequest): Promise<ActionResponse> {
-    const URL = `http://${this.setting.config.server.host}:${this.setting.config.server.port}/${request.url}`;
+    const { isPortDirected, host, port } = this.setting.config.httpServer;
     const headers = {
       'Content-Type': 'applications/json; charset=utf-8',
       Connection: 'keep-alive',
     };
+    let url: string;
     let response: Response;
     let result: ActionResponse;
+    if (isPortDirected) {
+      url = `http://${host}:${port}/${request.url}`;
+    } else {
+      url = `http://${host}/${request.url}`;
+    }
     try {
-      response = await fetch(URL, {
+      response = await fetch(url, {
         method: 'POST',
         body: request.body,
         timeout: request.timeout,
